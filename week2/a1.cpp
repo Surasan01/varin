@@ -3,13 +3,13 @@
 
 using namespace std;
 
-// โครงสร้างข้อมูลของ Node ที่มีชื่อและคะแนนและชี้ไปยัง Node ถัดไปและก่อนหน้า
+
 struct Node {
     string name;
     int score;
-    Node* next;
-    Node* prev;
-    
+    Node* next; // ชี้ไปยัง Node ถัดไป
+    Node* prev; // ชี้ไปยัง Node ก่อนหน้า
+
     // Constructor สำหรับ Node
     Node(string name, int score) {
         this->name = name;
@@ -19,16 +19,16 @@ struct Node {
     }
 };
 
-// คลาส Scoreboard ที่มีฟังก์ชันสำหรับการจัดการ Scoreboard
+// กำหนดคลาส Scoreboard
 class Scoreboard {
 private:
     Node* head;
     Node* tail;
-    int size;
-    int maxSize;
+    int size;   
+    int maxSize; 
 
 public:
-    // Constructor สำหรับ Scoreboard
+    // Constructor สำหรับ Scoreboard ซึ่งรับขนาดสูงสุดของ Scoreboard
     Scoreboard(int maxSize) {
         head = nullptr;
         tail = nullptr;
@@ -36,7 +36,7 @@ public:
         this->maxSize = maxSize;
     }
 
-    // เพิ่มคะแนนใหม่ลงใน Scoreboard
+    // เมธอดสำหรับเพิ่มคะแนนใหม่ลงใน Scoreboard
     void insert(string name, int score) {
         Node* newNode = new Node(name, score);
         if (head == nullptr) {
@@ -68,7 +68,7 @@ public:
         }
     }
 
-    // ลบคะแนนท้ายสุดของ Scoreboard
+    // เมธอดสำหรับลบคะแนนที่ตำแหน่งสุดท้ายของ Scoreboard
     void removeTail() {
         if (tail != nullptr) {
             Node* temp = tail;
@@ -81,7 +81,7 @@ public:
         }
     }
 
-    // แสดงผล Scoreboard ทั้งหมด
+    // เมธอดสำหรับแสดงผลลัพธ์ของ Scoreboard ทั้งหมด
     void display() {
         Node* current = head;
         int rank = 1;
@@ -95,8 +95,9 @@ public:
 
 // ฟังก์ชันหลักของโปรแกรม
 int main() {
-    Scoreboard scoreboard(5); // กำหนดขนาดสูงสุดของ scoreboard เป็น 10
-    
+    // สร้าง Scoreboard โดยกำหนดขนาดสูงสุดของ Scoreboard เป็น 10
+    Scoreboard scoreboard(5);
+
     // เพิ่มคะแนนตัวอย่าง
     scoreboard.insert("Player1", 100);
     scoreboard.insert("Player2", 95);
@@ -104,7 +105,8 @@ int main() {
     scoreboard.insert("Player4", 120);
     scoreboard.insert("Player5", 90);
     scoreboard.insert("Player6", 110);
-    
+
+    // แสดงผลลัพธ์ของ Scoreboard ก่อนการเพิ่มคะแนนใหม่
     cout << "Current Scoreboard:" << endl;
     scoreboard.display();
     char name[20];
@@ -117,6 +119,7 @@ int main() {
     
     scoreboard.insert(name, score);
 
+    // แสดงผลลัพธ์ของ Scoreboard หลังการเพิ่มคะแนนใหม่
     cout << "\nUpdated Scoreboard:" << endl;
     scoreboard.display();
 
