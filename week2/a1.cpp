@@ -7,10 +7,9 @@ using namespace std;
 struct Node {
     string name;
     int score;
-    Node* next; // ชี้ไปยัง Node ถัดไป
-    Node* prev; // ชี้ไปยัง Node ก่อนหน้า
+    Node* next; 
+    Node* prev; 
 
-    // Constructor สำหรับ Node
     Node(string name, int score) {
         this->name = name;
         this->score = score;
@@ -36,7 +35,7 @@ public:
         this->maxSize = maxSize;
     }
 
-    // เมธอดสำหรับเพิ่มคะแนนใหม่ลงใน Scoreboard
+
     void insert(string name, int score) {
         Node* newNode = new Node(name, score);
         if (head == nullptr) {
