@@ -41,7 +41,8 @@ public:
         if (head == nullptr) {
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        else {
             Node* current = head;
             while (current != nullptr && score < current->score) {
                 current = current->next;
@@ -50,18 +51,20 @@ public:
                 newNode->next = head;
                 head->prev = newNode;
                 head = newNode;
-            } else if (current == nullptr) {
+            }
+            else if (current == nullptr) {
                 tail->next = newNode;
                 newNode->prev = tail;
                 tail = newNode;
-            } else {
+            }
+            else {
                 newNode->next = current;
                 newNode->prev = current->prev;
                 current->prev->next = newNode;
                 current->prev = newNode;
             }
         }
-        size++;
+        size++; 
         if (size > maxSize) {
             removeTail();
         }
