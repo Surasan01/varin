@@ -24,14 +24,14 @@ private:
     Node *head;
     Node *tail;
     int size;   
-
+    int max;
 
 public:
-    Scoreboard(int maxSize) {
+    Scoreboard(int maxsize) {
         head = nullptr;
         tail = nullptr;
         size = 0;
-        int maxsize = maxSize;
+        this->max = maxsize;
     }
     
     void insert(string name , int score){
@@ -64,16 +64,14 @@ public:
             }
         }
         size++;
-        if (size > maxsize){
+        if (size > max){
             remove();
         }
     }
     
     void remove(){
-        Node *temp = tail;
         tail = tail->prev;
         tail->next = nullptr;
-        delete temp;
         size--;
     }
     
@@ -115,6 +113,3 @@ int main(){
     
     return 0 ;
 }
-
-
-
