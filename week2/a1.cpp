@@ -81,11 +81,9 @@ public:
     
     void display(){
         Node *current = head;
-        int rank = 1;
         while (current != nullptr){
-            cout << "Rank " << rank << " : " << current->name << " : " << current->score << endl;
+            cout << current->name << " : " << current->score << endl;
             current = current->next;
-            rank++;
         }
     }
 };
@@ -93,19 +91,20 @@ public:
 int main(){
     string name;
     int score ; 
-    Scoreboard sb(5);
+    Scoreboard sb(4);
     
-    sb.insert("Player1",120);
-    sb.insert("Player2",90);
-    sb.insert("Player3",80);
-    sb.insert("Player4",70);
-    sb.insert("Player5",85);
+    sb.insert("Ryu",100);
+    sb.insert("Chunli",95);
+    sb.insert("Ken",98);
+    sb.insert("Sagat",94);
+
     
     sb.display();
     cout << "Name : ";
     cin >> name ;
     cout << "Score : ";
     cin >> score ;
+    cout << endl;
     
     sb.insert(name,score);
     
