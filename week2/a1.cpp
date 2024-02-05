@@ -69,7 +69,9 @@ public:
         }
     }
     
+    
     void remove(){
+        cout << tail->name << " was remove from the scoreboard" << endl;
         tail = tail->prev;
         tail->next = nullptr;
         size--;
@@ -98,7 +100,6 @@ int main(){
     sb.insert("Player3",80);
     sb.insert("Player4",70);
     sb.insert("Player5",85);
-    sb.insert("Player6",100);
     
     sb.display();
     cout << "Name : ";
