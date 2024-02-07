@@ -4,11 +4,12 @@
 using namespace std;
 
 
-struct Node {
+class Node {
+public:
     string name;
     int score;
-    Node *next; 
-    Node *prev; 
+    Node *next;
+    Node *prev;
 
     Node(string name, int score) {
         this->name = name;
@@ -34,6 +35,7 @@ public:
         this->max = maxsize;
     }
     
+    
     void insert(string name , int score){
         Node *newNode = new Node(name,score);
         if (head == nullptr){
@@ -54,6 +56,7 @@ public:
                 head->prev = newNode;
                 newNode->next = head;
                 head = newNode;
+                // cout << head->score << endl;
             }
             else {
                 // cout << current->score << endl;
