@@ -11,9 +11,9 @@ class Node {
         Node *next;
         Node *prev;
 
-        Node(string name, int score) {
-            this->name = name;
-            this->score = score;
+        Node(string name_in, int score_in) {
+            name = name_in;
+            score = score_in;
             next = nullptr;
             prev = nullptr;
         }
@@ -32,7 +32,7 @@ class Scoreboard {
             head = nullptr;
             tail = nullptr;
             size = 0;
-            this->max = maxsize;
+            max = maxsize;
         }
     
     
