@@ -34,28 +34,32 @@ class board {
         if (column1 == 'a'){no1 = 1;}
         else if (column1 == 'b'){no1 = 2;}
         else{no1=3;}
-        if (column2 == 'a'){no1 = 1;}
-        else if (column2 == 'b'){no1 = 2;}
-        else{no1=3;}
-        if (column3 == 'a'){no1 = 1;}
-        else if (column3 == 'b'){no1 = 2;}
-        else{no1=3;}
+        if (column2 == 'a'){no2 = 1;}
+        else if (column2 == 'b'){no2 = 2;}
+        else{no2=3;}
+        if (column3 == 'a'){no3 = 1;}
+        else if (column3 == 'b'){no3 = 2;}
+        else{no3=3;}
 
-        int min_key1,min_key2,min_key3;
+        int min_key1,min_key2,min_key3,number;
         for (i=1;i<size;i++){
+            number = arr[i][0];
             min_key1 = arr[i][no1];
             min_key2 = arr[i][no2];
             min_key3 = arr[i][no3];
 
-            for (j=i ;j>0 && arr[j-1][no1]>min_key1;j--){
-                arr[j][no1]=arr[j][no1];
-                arr[j][no2]=arr[j][no2];
-                arr[j][no3]=arr[j][no3];
+            for (j=i-1 ;j>=0 && arr[j][no1]>min_key1;j--){
+                arr[j+1][0]=arr[j][0];
+                arr[j+1][no1]=arr[j][no1];
+                arr[j+1][no2]=arr[j][no2];
+                arr[j+1][no3]=arr[j][no3];
+                
             }
-
-            arr[j][no1]=min_key1;
-            arr[j][no2]=min_key2;
-            arr[j][no3]=min_key3;
+            
+            arr[j+1][0]=number;
+            arr[j+1][no1]=min_key1;
+            arr[j+1][no2]=min_key2;
+            arr[j+1][no3]=min_key3;
 
         }
     }
