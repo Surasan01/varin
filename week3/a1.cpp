@@ -1,19 +1,15 @@
 #include <iostream>
-
 #include <iomanip>
-
 using namespace std;
 
 class board {
     public:
         int size;
-
         int a,b,c;
         int arr[20][4];
         board(int maxsize){
             size = maxsize;
         }
-    
     
     void insert(int no,int a,int b,int c){
         arr[no-1][0]=no;
@@ -55,7 +51,6 @@ class board {
                 arr[j+1][no1]=arr[j][no1];
                 arr[j+1][no2]=arr[j][no2];
                 arr[j+1][no3]=arr[j][no3];
-                
             }
             arr[j+1][0]=number;
             arr[j+1][no1]=min_key1;
@@ -74,7 +69,6 @@ class board {
                 arr[j+1][no1]=arr[j][no1];
                 arr[j+1][no2]=arr[j][no2];
                 arr[j+1][no3]=arr[j][no3];
-                
             }
             arr[j+1][0]=number;
             arr[j+1][no1]=min_key1;
@@ -93,15 +87,12 @@ class board {
                 arr[j+1][no1]=arr[j][no1];
                 arr[j+1][no2]=arr[j][no2];
                 arr[j+1][no3]=arr[j][no3];
-                
             }
             arr[j+1][0]=number;
             arr[j+1][no1]=min_key1;
             arr[j+1][no2]=min_key2;
             arr[j+1][no3]=min_key3;
         }
-
-
     }
 };
 
@@ -138,6 +129,5 @@ int main(){
     board.sorting(ch1,ch2,ch3);
 
     board.display();
-
     return 0;
 }
