@@ -29,14 +29,14 @@ class board {
     void sorting(char column1,char column2,char column3){
         int no1,no2,no3,i,j;
 
-        if (column1 == 'a'){no1 = 1;}
-        else if (column1 == 'b'){no1 = 2;}
+        if (column1 == 'a' || column1 == 'A'){no1 = 1;}
+        else if (column1 == 'b' || column1 == 'B'){no1 = 2;}
         else{no1=3;}
-        if (column2 == 'a'){no2 = 1;}
-        else if (column2 == 'b'){no2 = 2;}
+        if (column2 == 'a' || column2 == 'A'){no2 = 1;}
+        else if (column2 == 'b' || column2 == 'B'){no2 = 2;}
         else{no2=3;}
-        if (column3 == 'a'){no3 = 1;}
-        else if (column3 == 'b'){no3 = 2;}
+        if (column3 == 'a' || column3 == 'A'){no3 = 1;}
+        else if (column3 == 'b' || column3 == 'B'){no3 = 2;}
         else{no3=3;}
 
         int min_key1,min_key2,min_key3,number;
@@ -65,7 +65,7 @@ class board {
             min_key3 = arr[i][no3];
 
             for (j=i-1 ;j>=0 && arr[j][no2]>min_key2 && arr[j][no1]==min_key1;j--){
-                arr[j+1][0]=arr[j][0];
+                arr[j+1][0]=arrx[j][0];
                 arr[j+1][no1]=arr[j][no1];
                 arr[j+1][no2]=arr[j][no2];
                 arr[j+1][no3]=arr[j][no3];
