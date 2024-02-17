@@ -65,7 +65,7 @@ class board {
             min_key3 = arr[i][no3];
 
             for (j=i-1 ;j>=0 && arr[j][no2]>min_key2 && arr[j][no1]==min_key1;j--){
-                arr[j+1][0]=arrx[j][0];
+                arr[j+1][0]=arr[j][0];
                 arr[j+1][no1]=arr[j][no1];
                 arr[j+1][no2]=arr[j][no2];
                 arr[j+1][no3]=arr[j][no3];
