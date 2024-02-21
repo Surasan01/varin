@@ -57,49 +57,135 @@ class mbti{
             a[i] = pow(dpq,0.5);
         }
     }
-    void mark(int size){
-        
+    void mark3(){
+        int i ,j,point[3];
+        float min=99;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[0]=j;
+            }
+        }
+        min=99;
+        a[point[0]] = 100;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[1]=j;
+            }
+        }
+        min=99;
+        a[point[1]] = 100;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[2]=j;
+            }
+        }
+        a[point[2]] = 100;
+        // for (i=0;i<3 ; i++){
+        //     cout << point[i] << endl;
+        // }
+    }
+    void mark5(){
+        int i ,j,point[3];
+        float min=99;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[0]=j;
+            }
+        }
+        min=99;
+        a[point[0]] = 100;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[1]=j;
+            }
+        }
+        min=99;
+        a[point[1]] = 100;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[2]=j;
+            }
+        }
+        min=99;
+        a[point[2]] = 100;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[3]=j;
+            }
+        }
+        min=99;
+        a[point[3]] = 100;
+        for (j=0;j<15;j++){
+            if (a[j] < min){
+                min = a[j];
+                point[4]=j;
+            }
+        }
+        a[point[4]] = 100;
+        // for (i=0;i<5 ; i++){
+        //     cout << point[i] << endl;
+        // }
+
+    }
+
+    void typembti3(){
+        int i,j;
+        for (i=0;i<3;i++){
+            for (j=0;j<4;j++){
+                
+            }
+        }
+    }
+    void typembti5(){
+
     }
 };
 
 
 int main() {
-    string name_new ;
+    mbti mbti;
+    string name_new,type_new ;
     float ne_new,ni_new,te_new,ti_new,se_new,si_new,fe_new,fi_new;
     int mark;
+    // cout << "Name : ";
+    // cin >> name_new;
+    // cout << "Ne : ";
+    // cin >> ne_new;
+    // cout << "Ni : ";
+    // cin >> ni_new;
+    // cout << "Te : ";
+    // cin >> te_new;
+    // cout << "Ti : ";
+    // cin >> ti_new;
+    // cout << "Se : ";
+    // cin >> se_new;
+    // cout << "Si : ";
+    // cin >> si_new;
+    // cout << "Fe : ";
+    // cin >> fe_new;
+    // cout << "Fi : ";
+    // cin >> fi_new;
 
-    mbti mbti;
-    cout << "Name : ";
-    cin >> name_new;
-    cout << "Ne : ";
-    cin >> ne_new;
-    cout << "Ni : ";
-    cin >> ni_new;
-    cout << "Te : ";
-    cin >> te_new;
-    cout << "Ti : ";
-    cin >> ti_new;
-    cout << "Se : ";
-    cin >> se_new;
-    cout << "Si : ";
-    cin >> si_new;
-    cout << "Fe : ";
-    cin >> fe_new;
-    cout << "Fi : ";
-    cin >> fi_new;
+    // mbti.ed(name_new,ne_new,ni_new,te_new,ti_new,se_new,si_new,fe_new,fi_new);
+    mbti.ed("Puiza",32,32,27,36,29,31,28,23);
 
-    mbti.ed(name_new,ne_new,ni_new,te_new,ti_new,se_new,si_new,fe_new,fi_new);
-
-    cout << "Mark size : ";
+    cout << "Mark size (3 or 5): ";
     cin >> mark ;
-    
-    mbti.mark(mark);
-
-
-
-    cout << "Number: " << mbti.data[1].number << endl;
-    cout << "Name: " << mbti.data[1].name << endl;
-    cout << "Name: " << mbti.data[1].se << endl;
+    if (mark == 3){
+        mbti.mark3();
+        mbti.typembti3();
+    }
+    else if (mark == 5){
+        mbti.mark5();
+        mbti.typembti5(mark);
+    }
 
 
     return 0;
