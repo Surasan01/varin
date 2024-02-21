@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -34,9 +35,30 @@ class mbti{
         }
     void ed(string name_new, float ne_new ,float ni_new ,float te_new,float ti_new ,float se_new ,float si_new ,float fe_new ,float fi_new){
         int i ; 
+        float p1,p2,p3,p4,p5,p6,p7,p8,dpq;
         for (i=0;i<15;i++){
-            
+            p1 = (data[i].ne - ne_new);
+            p1 = p1*p1;
+            p2 = (data[i].ni - ni_new);
+            p2 = p2*p2;
+            p3 = (data[i].te - te_new);
+            p3 = p3*p3;
+            p4 = (data[i].ti - ti_new);
+            p4 = p4*p4;
+            p5 = (data[i].se - se_new);
+            p5 = p5*p5;
+            p6 = (data[i].si - si_new);
+            p6 = p6*p6;
+            p7 = (data[i].fe - fe_new);
+            p7 = p7*p7;
+            p8 = (data[i].fi - fi_new);
+            p8 = p8*p8;
+            dpq = p1+p2+p3+p4+p5+p6+p7+p8;
+            a[i] = pow(dpq,0.5);
         }
+    }
+    void mark(int size){
+        
     }
 };
 
@@ -44,6 +66,8 @@ class mbti{
 int main() {
     string name_new ;
     float ne_new,ni_new,te_new,ti_new,se_new,si_new,fe_new,fi_new;
+    int mark;
+
     mbti mbti;
     cout << "Name : ";
     cin >> name_new;
@@ -63,7 +87,15 @@ int main() {
     cin >> fe_new;
     cout << "Fi : ";
     cin >> fi_new;
+
     mbti.ed(name_new,ne_new,ni_new,te_new,ti_new,se_new,si_new,fe_new,fi_new);
+
+    cout << "Mark size : ";
+    cin >> mark ;
+    
+    mbti.mark(mark);
+
+
 
     cout << "Number: " << mbti.data[1].number << endl;
     cout << "Name: " << mbti.data[1].name << endl;
