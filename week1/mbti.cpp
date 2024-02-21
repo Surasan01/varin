@@ -28,21 +28,46 @@ class mbti{
             data[9] = {10,"n7",33.4,38.6,29,29,26,37,24,25,"INTJ"};
             data[10]= {11,"n8",30,29.6,34,32,38,28,33,22,"ENTP"};
             data[11]= {12,"n9",29,22.8,40,28,27,31,29,19,"ENTJ"};
-            data[12] = {13,"n10",25.5,33,28,34,37,27,28,24,"INFJ"};
-            data[13] = {14,"n11",29.8,26.4,28,36,29,30,33,28,"INTJ"};
-            data[14] = {15,"n12",18.4,15,30,33,33,31,26,23,"ESTJ"};
+            data[12]= {13,"n10",25.5,33,28,34,37,27,28,24,"INFJ"};
+            data[13]= {14,"n11",29.8,26.4,28,36,29,30,33,28,"INTJ"};
+            data[14]= {15,"n12",18.4,15,30,33,33,31,26,23,"ESTJ"};
         }
-    void 
+    void ed(string name_new, float ne_new ,float ni_new ,float te_new,float ti_new ,float se_new ,float si_new ,float fe_new ,float fi_new){
+        int i ; 
+        for (i=0;i<15;i++){
+            
+        }
+    }
 };
 
 
 int main() {
+    string name_new ;
+    float ne_new,ni_new,te_new,ti_new,se_new,si_new,fe_new,fi_new;
+    mbti mbti;
+    cout << "Name : ";
+    cin >> name_new;
+    cout << "Ne : ";
+    cin >> ne_new;
+    cout << "Ni : ";
+    cin >> ni_new;
+    cout << "Te : ";
+    cin >> te_new;
+    cout << "Ti : ";
+    cin >> ti_new;
+    cout << "Se : ";
+    cin >> se_new;
+    cout << "Si : ";
+    cin >> si_new;
+    cout << "Fe : ";
+    cin >> fe_new;
+    cout << "Fi : ";
+    cin >> fi_new;
+    mbti.ed(name_new,ne_new,ni_new,te_new,ti_new,se_new,si_new,fe_new,fi_new);
 
-    mbti myMbti;
-
-    cout << "Number: " << myMbti.data[1].number << endl;
-    cout << "Name: " << myMbti.data[1].name << endl;
-    cout << "Name: " << myMbti.data[1].se << endl;
+    cout << "Number: " << mbti.data[1].number << endl;
+    cout << "Name: " << mbti.data[1].name << endl;
+    cout << "Name: " << mbti.data[1].se << endl;
 
 
     return 0;
