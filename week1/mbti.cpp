@@ -96,7 +96,6 @@ class mbti{
         column5(data[point[0]].type[1],data[point[1]].type[1],data[point[2]].type[1],data[point[3]].type[1],data[point[4]].type[1]);
         column5(data[point[0]].type[2],data[point[1]].type[2],data[point[2]].type[2],data[point[3]].type[2],data[point[4]].type[2]);
         column5(data[point[0]].type[3],data[point[1]].type[3],data[point[2]].type[3],data[point[3]].type[3],data[point[4]].type[3]);
-
     }
 
     void column3(char r1,char r2,char r3){
@@ -139,7 +138,7 @@ class mbti{
         }
         for (i=3;i<5 && r[2] != '#';i++){
             if (r[2]==r[i]){
-                a3++;
+                a3++; 
                 r[i]='#';
             }
         }
@@ -157,7 +156,6 @@ class mbti{
         }
         mytype += r[t];
     }
-    
 };
 
 int main() {
