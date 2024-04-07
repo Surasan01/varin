@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/potij/OneDrive/เอกสาร/GitHub/warin/week1",
-      "program": "c:/Users/potij/OneDrive/เอกสาร/GitHub/warin/week1/build/Debug/outDebug",
+      "cwd": "c:/Users/potij/OneDrive/เอกสาร/GitHub/warin/week3",
+      "program": "c:/Users/potij/OneDrive/เอกสาร/GitHub/warin/week3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

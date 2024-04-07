@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 class Node {
     public:
         string name;
@@ -20,13 +19,11 @@ class Node {
 
 
 class Scoreboard {
-    private:
+    public:
         Node *head;
         Node *tail;
         int size;   
         int max;
-
-    public:
         Scoreboard(int maxsize) {
             head = nullptr;
             tail = nullptr;
