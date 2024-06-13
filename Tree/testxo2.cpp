@@ -239,4 +239,4 @@ int main(){
     tree.boardsx(ox);
     cout << endl << node ; 
     return 0;
-}
+}//ผ

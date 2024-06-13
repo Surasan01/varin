@@ -1,0 +1,29 @@
+Stack1: เก็บข้อมูลที่ถูก enqueue
+Stack2: เก็บข้อมูลที่ถูก dequeue (เมื่อจำเป็นต้อง dequeue แล้ว)
+
+Enqueue(item):
+    นำ item ไป push ลงใน Stack1
+A
+Dequeue():
+    // หาก Stack2 ไม่มีข้อมูล
+    // ให้ pop ข้อมูลจาก Stack1 และ push ลงใน Stack2 จนกว่า Stack1 จะว่าง
+    // จากนั้น pop ข้อมูลออกจาก Stack2 เพื่อทำการ dequeue
+
+
+Stack1: สำหรับการเก็บข้อมูลที่ถูก enqueue
+Stack2: สำหรับการเก็บข้อมูลที่ถูก dequeue
+
+Enqueue(item):
+    Push(item, Stack1)
+
+Dequeue():
+    If Stack2 is empty:
+        While Stack1 is not empty:
+            Push(pop(Stack1), Stack2)
+    Return pop(Stack2)
+
+
+
+
+
+
